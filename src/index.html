@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Article</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 15px;
+            border-right: 2px dashed #979797;
+            border-left: 2px dashed #979797;
+        }
+        p {
+            font-size: 18px;
+        }
+        #popup {
+            position: absolute;
+            top: 0;
+            left: -999px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #tweet {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            border: 1px solid darkgrey;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.31);
+            color: #000;
+            text-decoration: none;
+        }
+        #tweet img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        #tweet:visited {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>I Once Talked To Seth Godin On The Phone: Here’s How It Changed My Life and Business</h1>
+        <article>
+            <p>
+                It was a year ago. I had 15 people working for me, my business was losing money every month, I was
+                stressed
+                beyond
+                belief, and everyone thought I was successful. “You know, Jeff,” my business coach told me, “you don’t
+                have
+                to do
+                this.”
+                But I did. At least, I thought I did. When you’re good at something, you have to keep doing it even if
+                it’s
+                killing
+                you, right?
+                After bootstrapping my company to a million dollars, I was now living in the stressful reality of
+                running a
+                seven-figure company.
+                So I did what smart entrepreneurs do in this situation. I hired a coach.
+            </p>
+        </article>
+    </main>
+    <div id="popup">
+        <a id="tweet" href="https://twitter.com/intent/tweet"><img src="twitter.svg" alt="Tweet"> Tweet</a>
+    </div>
+    <script>
+        window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) {
+                return t;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
